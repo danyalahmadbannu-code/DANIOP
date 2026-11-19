@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Made by Dani Perfumes Collection</title>
+<meta name="description" content="Shop perfumes for men, women and unisex. Made by Dani Perfumes Collection: long-lasting fragrances in 30ml, 50ml and 100ml.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0c0a08;--ink2:#1a1612;--gold:#d4b36a;--gold2:#f1dba0;--cream:#f6efe2;--mute:#b9ae9a;--glass:rgba(255,255,255,.06);--line:rgba(212,179,106,.28)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Jost',system-ui,sans-serif;background:var(--ink);color:var(--cream);line-height:1.6;overflow-x:hidden}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-height:1.1}
+img,svg{max-width:100%;display:block}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{width:min(1200px,92%);margin-inline:auto}
+section{padding:clamp(3rem,8vw,6rem) 0}
+h2{font-size:clamp(2rem,5vw,3.4rem);margin-bottom:1rem}
+.sub{color:var(--mute);max-width:52ch;margin-bottom:2rem}
+.btn{display:inline-block;padding:.85rem 1.8rem;border-radius:999px;background:linear-gradient(135deg,var(--gold2),var(--gold));color:var(--ink);font-weight:500;transition:transform .25s,box-shadow .25s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(212,179,106,.35)}
+.ghost{background:var(--glass);color:var(--cream);border:1px solid var(--line)}
+.glass{background:var(--glass);border:1px solid var(--line);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-radius:24px}
+
+/* top bar + header */
+.promo{background:var(--gold);color:var(--ink);text-align:center;font-size:.85rem;padding:.45rem 1rem}
+header{position:sticky;top:0;z-index:50;background:rgba(12,10,8,.75);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.9rem 0}
+.logo{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:700;color:var(--gold2)}
+.menu{display:flex;gap:1.6rem}
+.menu a{color:var(--mute);transition:color .2s}
+.menu a:hover{color:var(--gold2)}
+.icons{display:flex;gap:.5rem;align-items:center}
+.ibtn{position:relative;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--line);background:var(--glass)}
+.badge{position:absolute;top:-4px;right:-4px;background:var(--gold);color:var(--ink);font-size:.7rem;min-width:18px;height:18px;border-radius:9px;display:grid;place-items:center;font-weight:500}
+.burger{display:none}
+@media(max-width:820px){
+ .burger{display:grid}
+ .menu{position:absolute;left:0;right:0;top:100%;flex-direction:column;background:var(--ink2);padding:1rem 4%;gap:1rem;border-bottom:1px solid var(--line);display:none}
+ .menu.open{display:flex}
+}
+
+/* hero */
+.hero{position:relative;padding:clamp(3rem,9vw,7rem) 0;overflow:hidden}
+.hero::before{content:"";position:absolute;width:60vmax;height:60vmax;right:-20vmax;top:-20vmax;background:radial-gradient(circle,rgba(212,179,106,.28),transparent 62%);animation:drift 14s ease-in-out infinite alternate}
+@keyframes drift{to{transform:translate(-6vmax,6vmax) scale(1.08)}}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:center;position:relative}
+.hero h1{font-size:clamp(2.8rem,8vw,6rem);margin-bottom:1.2rem}
+.hero h1 em{font-style:italic;color:var(--gold2)}
+.hero p{color:var(--mute);max-width:46ch;margin-bottom:2rem;font-size:1.05rem}
+.hero .row{display:flex;gap:.8rem;flex-wrap:wrap}
+.hero-art{display:grid;place-items:center}
+.hero-art svg{width:min(340px,80%);filter:drop-shadow(0 30px 50px rgba(212,179,106,.3));animation:float 6s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-14px)}}
+@media(max-width:820px){.hero-grid{grid-template-columns:1fr}.hero-art{order:-1}}
+
+/* ===== LIQUID WATER ANIMATION ===== */
+.hero{padding-bottom:clamp(8rem,16vw,11rem)}
+.hero-grid{z-index:2}
+.blobs{position:absolute;inset:0;z-index:0;pointer-events:none}
+.blobs i{position:absolute;display:block;filter:blur(38px);opacity:.55;animation:morph 11s ease-in-out infinite,roam 18s ease-in-out infinite alternate}
+.blobs i:nth-child(1){width:34vmax;height:34vmax;left:-8vmax;top:-6vmax;background:radial-gradient(circle,#d4b36a,transparent 70%)}
+.blobs i:nth-child(2){width:26vmax;height:26vmax;right:8%;top:20%;background:radial-gradient(circle,#8a4b1f,transparent 70%);animation-delay:-4s,-6s}
+.blobs i:nth-child(3){width:22vmax;height:22vmax;left:35%;bottom:-4vmax;background:radial-gradient(circle,#f1dba0,transparent 70%);opacity:.35;animation-delay:-7s,-11s}
+@keyframes morph{0%,100%{border-radius:60% 40% 30% 70%/60% 30% 70% 40%}50%{border-radius:30% 60% 70% 40%/50% 60% 30% 60%}}
+@keyframes roam{to{translate:6vmax -4vmax}}
+.water{position:absolute;left:0;right:0;bottom:0;height:clamp(90px,14vw,150px);z-index:1;pointer-events:none;overflow:hidden}
+.water svg{position:absolute;left:0;bottom:0;width:200%;height:100%;animation:flow 14s linear infinite}
+.water svg:nth-child(1){opacity:.35;animation-duration:20s;height:100%}
+.water svg:nth-child(2){opacity:.55;animation-duration:14s;animation-direction:reverse;height:82%}
+.water svg:nth-child(3){opacity:1;animation-duration:9s;height:62%}
+@keyframes flow{to{transform:translateX(-50%)}}
+.wv{animation:slosh 2.6s linear infinite}
+.wv2{animation:slosh 3.8s linear infinite reverse}
+@keyframes slosh{to{transform:translateX(-46px)}}
+.lvl{animation:bob 4s ease-in-out infinite alternate}
+@keyframes bob{to{transform:translateY(5px)}}
+
+/* chips */
+.chips{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1.5rem}
+.chip{padding:.55rem 1.2rem;border-radius:999px;border:1px solid var(--line);background:var(--glass);color:var(--mute);transition:.2s}
+.chip.on,.chip:hover{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+
+/* tools */
+.tools{display:flex;flex-wrap:wrap;gap:.8rem;margin-bottom:1.5rem}
+.tools input,.tools select{flex:1 1 220px;padding:.85rem 1.2rem;border-radius:999px;border:1px solid var(--line);background:var(--glass);color:var(--cream);font:inherit}
+.tools select option{background:var(--ink2)}
+
+/* products */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1.4rem}
+.card{padding:1.1rem;display:flex;flex-direction:column;gap:.7rem;transition:transform .3s,border-color .3s}
+.card:hover{transform:translateY(-5px);border-color:var(--gold)}
+.pimg{position:relative;aspect-ratio:4/5;border-radius:18px;display:grid;place-items:center;cursor:pointer;overflow:hidden}
+.pimg svg{width:55%;transition:transform .4s}
+.card:hover .pimg svg{transform:scale(1.07) rotate(-3deg)}
+.heart{position:absolute;top:10px;right:10px;width:36px;height:36px;border-radius:50%;background:rgba(0,0,0,.45);display:grid;place-items:center;font-size:1.1rem}
+.heart.on{color:#ff6b81}
+.tag{font-size:.8rem;color:var(--mute)}
+.card h3{font-size:1.5rem}
+.notes{font-size:.85rem;color:var(--mute)}
+.sizes{display:flex;gap:.4rem}
+.sz{flex:1;padding:.4rem;border-radius:10px;border:1px solid var(--line);font-size:.85rem}
+.sz.on{background:var(--gold);color:var(--ink)}
+.buy{display:flex;align-items:center;justify-content:space-between;margin-top:auto}
+.price{font-size:1.3rem;color:var(--gold2);font-weight:500}
+.add{padding:.6rem 1.1rem;border-radius:999px;background:var(--gold);color:var(--ink);font-weight:500;font-size:.9rem}
+.empty{grid-column:1/-1;text-align:center;color:var(--mute);padding:2rem}
+
+/* scent families */
+.fam{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem}
+.fam button{padding:1.6rem 1rem;text-align:center;font-family:'Cormorant Garamond',serif;font-size:1.4rem;transition:.25s}
+.fam button:hover{background:rgba(212,179,106,.15);transform:translateY(-3px)}
+.fam small{display:block;font-family:'Jost';font-size:.78rem;color:var(--mute)}
+
+/* why + reviews + story */
+.why{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem}
+.why div{padding:1.6rem}
+.why h3{font-size:1.5rem;margin-bottom:.4rem;color:var(--gold2)}
+.why p,.rev p{color:var(--mute);font-size:.95rem}
+.revs{display:flex;gap:1.2rem;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:1rem}
+.rev{flex:0 0 min(340px,85%);scroll-snap-align:start;padding:1.6rem}
+.rev b{display:block;margin-top:.8rem;color:var(--gold2)}
+.story{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center}
+.story .glass{padding:clamp(1.5rem,4vw,3rem)}
+@media(max-width:820px){.story{grid-template-columns:1fr}}
+
+/* newsletter + footer */
+.news{text-align:center;padding:clamp(2rem,6vw,4rem)}
+.news form{display:flex;gap:.6rem;max-width:480px;margin:1.5rem auto 0;flex-wrap:wrap}
+.news input{flex:1 1 220px;padding:.85rem 1.2rem;border-radius:999px;border:1px solid var(--line);background:rgba(0,0,0,.3);color:var(--cream);font:inherit}
+.msg{margin-top:.8rem;min-height:1.4em;font-size:.9rem}
+footer{border-top:1px solid var(--line);padding:3rem 0 2rem;color:var(--mute);font-size:.92rem}
+.fgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:2rem;margin-bottom:2rem}
+footer h4{color:var(--gold2);margin-bottom:.6rem;font-family:'Cormorant Garamond',serif;font-size:1.2rem}
+footer li{list-style:none;margin:.3rem 0}
+.wa{position:fixed;right:18px;bottom:18px;z-index:60;width:56px;height:56px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.4);color:#fff;font-weight:700}
+
+/* drawer + modal */
+.shade{position:fixed;inset:0;background:rgba(0,0,0,.6);opacity:0;pointer-events:none;transition:.3s;z-index:70}
+.shade.on{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;height:100%;width:min(420px,100%);background:var(--ink2);border-left:1px solid var(--line);z-index:80;transform:translateX(100%);transition:transform .35s;display:flex;flex-direction:column}
+.drawer.on{transform:none}
+.dh{display:flex;justify-content:space-between;align-items:center;padding:1.2rem;border-bottom:1px solid var(--line)}
+.items{flex:1;overflow-y:auto;padding:1rem 1.2rem}
+.it{display:flex;gap:.8rem;align-items:center;padding:.8rem 0;border-bottom:1px solid var(--line)}
+.it .th{width:52px;height:64px;border-radius:10px;display:grid;place-items:center;flex:none}
+.it .th svg{width:60%}
+.it div.i{flex:1;font-size:.9rem}
+.qty{display:flex;align-items:center;gap:.5rem;margin-top:.3rem}
+.qty button{width:26px;height:26px;border-radius:50%;border:1px solid var(--line)}
+.df{padding:1.2rem;border-top:1px solid var(--line)}
+.tot{display:flex;justify-content:space-between;font-size:1.2rem;margin-bottom:1rem}
+.modal{position:fixed;inset:0;z-index:90;display:none;place-items:center;padding:1rem}
+.modal.on{display:grid}
+.mbox{position:relative;width:min(760px,100%);max-height:92vh;overflow-y:auto;padding:1.5rem;background:var(--ink2);display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.mbox .pimg{cursor:default}
+.x{position:absolute;top:12px;right:14px;font-size:1.6rem}
+.meter{height:6px;border-radius:3px;background:rgba(255,255,255,.12);margin:.2rem 0 .8rem}
+.meter i{display:block;height:100%;border-radius:3px;background:linear-gradient(90deg,var(--gold),var(--gold2))}
+@media(max-width:640px){.mbox{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<div class="promo">Free delivery on orders over $100 &nbsp;|&nbsp; Free sample with every order</div>
+
+<header>
+ <div class="wrap nav">
+  <a href="#top" class="logo">Made by Dani</a>
+  <nav class="menu" id="menu" aria-label="Main">
+   <a href="#shop">Shop</a><a href="#scents">Scent families</a><a href="#why">Why Dani</a><a href="#reviews">Reviews</a><a href="#story">Our story</a><a href="#contact">Contact</a>
+  </nav>
+  <div class="icons">
+   <button class="ibtn" aria-label="Search" onclick="document.getElementById('q').focus();location.hash='#shop'">&#128269;</button>
+   <button class="ibtn" aria-label="Open cart" onclick="openCart()">&#128717;<span class="badge" id="count">0</span></button>
+   <button class="ibtn burger" aria-label="Menu" onclick="document.getElementById('menu').classList.toggle('open')">&#9776;</button>
+  </div>
+ </div>
+</header>
+
+<main id="top">
+<section class="hero">
+ <div class="blobs" aria-hidden="true"><i></i><i></i><i></i></div>
+ <div class="water" aria-hidden="true">
+  <svg viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0 60 C150 20 450 100 600 60 C750 20 1050 100 1200 60 V120 H0Z" fill="#d4b36a"/></svg>
+  <svg viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0 50 C150 90 450 10 600 50 C750 90 1050 10 1200 50 V120 H0Z" fill="#8a6a2e"/></svg>
+  <svg viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0 55 C150 25 450 85 600 55 C750 25 1050 85 1200 55 V120 H0Z" fill="#0c0a08"/></svg>
+ </div>
+ <div class="wrap hero-grid">
+  <div>
+   <h1>Scents made to be <em>remembered.</em></h1>
+   <p>Dozens of perfumes for him, for her and for everyone. Pick a bottle, pick a size, and wear something that lasts from morning to midnight.</p>
+   <div class="row"><a href="#shop" class="btn">Shop perfumes</a><a href="#scents" class="btn ghost">Find your scent</a></div>
+  </div>
+  <div class="hero-art" id="heroArt" aria-hidden="true"></div>
+ </div>
+</section>
+
+<section id="shop">
+ <div class="wrap">
+  <h2>All perfumes</h2>
+  <p class="sub">Search, filter and sort the full collection. Choose a size to see the price.</p>
+  <div class="chips" id="chips"></div>
+  <div class="tools">
+   <input id="q" type="search" placeholder="Search by name or note (e.g. oud, vanilla)" aria-label="Search perfumes">
+   <select id="sort" aria-label="Sort"><option value="">Sort: Featured</option><option value="lo">Price: low to high</option><option value="hi">Price: high to low</option><option value="az">Name: A to Z</option></select>
+  </div>
+  <div class="grid" id="grid"></div>
+ </div>
+</section>
+
+<section id="scents">
+ <div class="wrap">
+  <h2>Shop by scent family</h2>
+  <p class="sub">Not sure where to start? Choose the mood you like.</p>
+  <div class="fam" id="fam"></div>
+ </div>
+</section>
+
+<section id="gifts">
+ <div class="wrap">
+  <div class="glass news">
+   <h2>Gift sets and bundles</h2>
+   <p class="sub" style="margin-inline:auto">Buy any 3 perfumes and get 15% off. Add a gift box to any order.</p>
+   <a href="#shop" class="btn">Build your set</a>
+  </div>
+ </div>
+</section>
+
+<section id="why">
+ <div class="wrap">
+  <h2>Why choose Made by Dani</h2>
+  <div class="why">
+   <div class="glass"><h3>100% authentic</h3><p>Every bottle is genuine and sealed before it leaves us.</p></div>
+   <div class="glass"><h3>Long lasting</h3><p>Concentrated formulas that stay on skin for hours.</p></div>
+   <div class="glass"><h3>Fast delivery</h3><p>Packed carefully and shipped within 24 hours.</p></div>
+   <div class="glass"><h3>Secure payment</h3><p>Pay safely by card, bank transfer or cash on delivery.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="reviews">
+ <div class="wrap">
+  <h2>What customers say</h2>
+  <div class="revs">
+   <div class="glass rev"><p>&#9733;&#9733;&#9733;&#9733;&#9733;<br>Still smelling amazing after 10 hours. Got so many compliments.</p><b>Amina R.</b></div>
+   <div class="glass rev"><p>&#9733;&#9733;&#9733;&#9733;&#9733;<br>Beautiful packaging and the oud blend is exactly what I wanted.</p><b>Hassan K.</b></div>
+   <div class="glass rev"><p>&#9733;&#9733;&#9733;&#9733;&#9733;<br>Ordered a gift set for my sister. She loved every bottle.</p><b>Sara M.</b></div>
+   <div class="glass rev"><p>&#9733;&#9733;&#9733;&#9733;&#9733;<br>Fast delivery and a free sample that is now my new favourite.</p><b>Bilal A.</b></div>
+  </div>
+ </div>
+</section>
+
+<section id="story">
+ <div class="wrap story">
+  <div class="glass"><h2>Meet Dani</h2><p class="sub" style="margin:0">Dani started blending fragrances out of love for the way a scent can hold a memory. Today Made by Dani Perfumes Collection brings together many varieties, from soft florals to deep amber and oud, so everyone can find a signature scent.</p></div>
+  <div class="hero-art" id="storyArt" aria-hidden="true"></div>
+ </div>
+</section>
+
+<section id="contact">
+ <div class="wrap">
+  <div class="glass news">
+   <h2>Get 10% off your first order</h2>
+   <p class="sub" style="margin-inline:auto">Join our list for new arrivals and offers.</p>
+   <form id="nl" novalidate><input id="em" type="email" placeholder="Your email" aria-label="Email"><button class="btn" type="submit">Subscribe</button></form>
+   <p class="msg" id="nlmsg" role="status"></p>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="wrap">
+  <div class="fgrid">
+   <div><h4>Made by Dani</h4><p>Perfumes collection for men, women and unisex.</p></div>
+   <div><h4>Shop</h4><ul><li><a href="#shop">All perfumes</a></li><li><a href="#scents">Scent families</a></li><li><a href="#gifts">Gift sets</a></li></ul></div>
+   <div><h4>Contact</h4><ul><li>WhatsApp: +00 000 000 0000</li><li>hello@madebydani.com</li><li>Instagram: @madebydani</li></ul></div>
+   <div><h4>We accept</h4><p>Visa &middot; Mastercard &middot; Bank transfer &middot; Cash on delivery</p></div>
+  </div>
+  <p>&copy; 2026 Made by Dani Perfumes Collection. All rights reserved.</p>
+ </div>
+</footer>
+
+<a class="wa" href="https://wa.me/0000000000" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">WA</a>
+
+<div class="shade" id="shade" onclick="closeAll()"></div>
+<aside class="drawer" id="drawer" aria-label="Cart">
+ <div class="dh"><h3>Your cart</h3><button class="x" style="position:static" aria-label="Close cart" onclick="closeAll()">&times;</button></div>
+ <div class="items" id="items"></div>
+ <div class="df"><div class="tot"><span>Total</span><b id="total">$0</b></div><button class="btn" style="width:100%" onclick="checkout()">Checkout</button></div>
+</aside>
+<div class="modal" id="modal" role="dialog" aria-modal="true"><div class="glass mbox" id="mbox"></div></div>
+
+<script>
+/* ===== PRODUCTS: add more perfumes here. Prices are for 30ml / 50ml / 100ml ===== */
+const PRODUCTS = [
+ {id:1,name:"Midnight Oud",type:"Men",fam:"Woody",notes:"Oud, leather, amber",top:"Saffron",mid:"Oud",base:"Amber",long:90,proj:85,price:[45,70,110],c:"#6b3d1f"},
+ {id:2,name:"Rose Velour",type:"Women",fam:"Floral",notes:"Rose, peony, musk",top:"Peony",mid:"Rose",base:"White musk",long:75,proj:70,price:[40,62,98],c:"#a8405a"},
+ {id:3,name:"Golden Hour",type:"Unisex",fam:"Oriental",notes:"Amber, vanilla, tonka",top:"Bergamot",mid:"Amber",base:"Vanilla",long:88,proj:80,price:[42,66,104],c:"#c98a2b"},
+ {id:4,name:"Coastal Air",type:"Men",fam:"Fresh",notes:"Sea salt, lemon, cedar",top:"Lemon",mid:"Sea salt",base:"Cedar",long:60,proj:65,price:[35,55,85],c:"#2f7f95"},
+ {id:5,name:"Velvet Musk",type:"Unisex",fam:"Musk",notes:"White musk, iris, cashmere",top:"Iris",mid:"Musk",base:"Cashmere",long:70,proj:55,price:[38,58,90],c:"#8a7a8f"},
+ {id:6,name:"Sweet Praline",type:"Women",fam:"Gourmand",notes:"Praline, caramel, vanilla",top:"Caramel",mid:"Praline",base:"Vanilla",long:80,proj:75,price:[41,64,100],c:"#b5683a"},
+ {id:7,name:"Jasmine Noir",type:"Women",fam:"Floral",notes:"Jasmine, plum, patchouli",top:"Plum",mid:"Jasmine",base:"Patchouli",long:82,proj:78,price:[44,68,106],c:"#3d2a4f"},
+ {id:8,name:"Royal Sandal",type:"Men",fam:"Woody",notes:"Sandalwood, cardamom, vetiver",top:"Cardamom",mid:"Sandalwood",base:"Vetiver",long:85,proj:72,price:[46,72,112],c:"#8b5a2b"},
+ {id:9,name:"Citrus Bloom",type:"Unisex",fam:"Fresh",notes:"Grapefruit, neroli, green tea",top:"Grapefruit",mid:"Neroli",base:"Green tea",long:55,proj:60,price:[32,50,78],c:"#d9a21b"},
+ {id:10,name:"Amber Nights",type:"Men",fam:"Oriental",notes:"Amber, incense, spice",top:"Incense",mid:"Spice",base:"Amber",long:92,proj:88,price:[48,75,118],c:"#7a3216"},
+ {id:11,name:"Cloud Cotton",type:"Women",fam:"Musk",notes:"Cotton, pear, musk",top:"Pear",mid:"Cotton",base:"Musk",long:62,proj:50,price:[34,52,82],c:"#9fb4c7"},
+ {id:12,name:"Vanilla Smoke",type:"Unisex",fam:"Gourmand",notes:"Vanilla, tobacco, cocoa",top:"Cocoa",mid:"Tobacco",base:"Vanilla",long:86,proj:82,price:[43,67,105],c:"#5a3a2a"}
+];
+const SIZES=["30ml","50ml","100ml"];
+const FAMS={Floral:"Rose, jasmine",Woody:"Oud, sandal",Oriental:"Amber, spice",Fresh:"Citrus, sea",Musk:"Soft, clean",Gourmand:"Vanilla, sweet"};
+
+const state={type:"All",fam:null,q:"",sort:"",size:{},wish:{},cart:[]};
+PRODUCTS.forEach(p=>state.size[p.id]=0);
+const $=id=>document.getElementById(id);
+
+/* generated bottle artwork so no image files are needed */
+function bottle(c,live){
+ const W="q11.5 -8 23 0 "+"t23 0 ".repeat(11);
+ const liquid=live?`<clipPath id="cp${c.slice(1)}"><rect x="14" y="36" width="92" height="126" rx="20"/></clipPath>
+ <g clip-path="url(#cp${c.slice(1)})"><g class="lvl"><g transform="translate(14 78)"><path class="wv2" d="M0 4 ${W}V100 H0Z" fill="#f1dba0" fill-opacity=".28"/></g>
+ <g transform="translate(14 88)"><path class="wv" d="M0 0 ${W}V100 H0Z" fill="#f1dba0" fill-opacity=".5"/></g></g></g>`:"";
+ return `<svg viewBox="0 0 120 170" aria-hidden="true"><defs><linearGradient id="g${c.slice(1)}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${c}"/><stop offset="1" stop-color="#1a1612"/></linearGradient></defs>
+ <rect x="48" y="6" width="24" height="22" rx="4" fill="#d4b36a"/><rect x="54" y="26" width="12" height="10" fill="#f1dba0"/>
+ <rect x="14" y="36" width="92" height="126" rx="20" fill="url(#g${c.slice(1)})" stroke="#f1dba0" stroke-opacity=".5"/>
+ ${liquid}
+ <rect x="28" y="80" width="64" height="40" rx="6" fill="none" stroke="#f1dba0" stroke-opacity=".6"/>
+ <path d="M24 52 Q30 90 24 140" stroke="#fff" stroke-opacity=".25" stroke-width="5" fill="none" stroke-linecap="round"/></svg>`;
+}
+$("heroArt").innerHTML=bottle("#c98a2b",true);
+$("storyArt").innerHTML=bottle("#6b3d1f",true);
+
+/* filters */
+const types=["All","Men","Women","Unisex"];
+function renderChips(){
+ $("chips").innerHTML=types.map(t=>`<button class="chip ${state.type===t&&!state.fam?"on":""}" onclick="setType('${t}')">${t}</button>`).join("")
+  +(state.fam?`<button class="chip on" onclick="state.fam=null;renderAll()">${state.fam} &times;</button>`:"");
+}
+function setType(t){state.type=t;state.fam=null;renderAll()}
+function setFam(f){state.fam=f;state.type="All";renderAll();location.hash="#shop"}
+$("fam").innerHTML=Object.keys(FAMS).map(f=>`<button class="glass" onclick="setFam('${f}')">${f}<small>${FAMS[f]}</small></button>`).join("");
+$("q").addEventListener("input",e=>{state.q=e.target.value.toLowerCase();renderGrid()});
+$("sort").addEventListener("change",e=>{state.sort=e.target.value;renderGrid()});
+
+function list(){
+ let r=PRODUCTS.filter(p=>(state.type==="All"||p.type===state.type)&&(!state.fam||p.fam===state.fam)
+  &&(p.name+" "+p.notes+" "+p.fam).toLowerCase().includes(state.q));
+ const pr=p=>p.price[state.size[p.id]];
+ if(state.sort==="lo")r.sort((a,b)=>pr(a)-pr(b));
+ if(state.sort==="hi")r.sort((a,b)=>pr(b)-pr(a));
+ if(state.sort==="az")r.sort((a,b)=>a.name.localeCompare(b.name));
+ return r;
+}
+function renderGrid(){
+ const r=list();
+ $("grid").innerHTML=r.length?r.map(p=>`
+ <article class="glass card">
+  <div class="pimg" style="background:radial-gradient(circle at 50% 40%,${p.c}55,transparent 70%)" onclick="quick(${p.id})">
+   ${bottle(p.c)}
+   <button class="heart ${state.wish[p.id]?"on":""}" aria-label="Wishlist" onclick="event.stopPropagation();wish(${p.id})">${state.wish[p.id]?"&#9829;":"&#9825;"}</button>
+  </div>
+  <span class="tag">${p.type} &middot; ${p.fam}</span>
+  <h3>${p.name}</h3>
+  <p class="notes">${p.notes}</p>
+  <div class="sizes">${SIZES.map((s,i)=>`<button class="sz ${state.size[p.id]===i?"on":""}" onclick="setSize(${p.id},${i})">${s}</button>`).join("")}</div>
+  <div class="buy"><span class="price">$${p.price[state.size[p.id]]}</span><button class="add" onclick="addCart(${p.id})">Add to cart</button></div>
+ </article>`).join(""):`<p class="empty">No perfumes match. Try a different search or filter.</p>`;
+}
+function renderAll(){renderChips();renderGrid()}
+function setSize(id,i){state.size[id]=i;renderGrid()}
+function wish(id){state.wish[id]=!state.wish[id];renderGrid()}
+
+/* cart */
+function addCart(id,size){
+ const s=size??state.size[id];
+ const f=state.cart.find(i=>i.id===id&&i.s===s);
+ f?f.n++:state.cart.push({id,s,n:1});
+ renderCart();openCart();
+}
+function chg(k,d){state.cart[k].n+=d;if(state.cart[k].n<1)state.cart.splice(k,1);renderCart()}
+function renderCart(){
+ let total=0,count=0;
+ $("items").innerHTML=state.cart.length?state.cart.map((i,k)=>{
+  const p=PRODUCTS.find(x=>x.id===i.id),pr=p.price[i.s];total+=pr*i.n;count+=i.n;
+  return `<div class="it"><div class="th" style="background:${p.c}55">${bottle(p.c)}</div>
+  <div class="i"><b>${p.name}</b><br><span class="tag">${SIZES[i.s]} &middot; $${pr}</span>
+  <div class="qty"><button aria-label="Less" onclick="chg(${k},-1)">&minus;</button>${i.n}<button aria-label="More" onclick="chg(${k},1)">+</button></div></div>
+  <b>$${pr*i.n}</b></div>`}).join(""):`<p class="empty">Your cart is empty.</p>`;
+ $("total").textContent="$"+total;$("count").textContent=count;
+}
+function openCart(){$("drawer").classList.add("on");$("shade").classList.add("on")}
+function closeAll(){$("drawer").classList.remove("on");$("modal").classList.remove("on");$("shade").classList.remove("on")}
+function checkout(){
+ if(!state.cart.length)return;
+ const lines=state.cart.map(i=>{const p=PRODUCTS.find(x=>x.id===i.id);return `${i.n} x ${p.name} (${SIZES[i.s]})`}).join(", ");
+ window.open("https://wa.me/0000000000?text="+encodeURIComponent("Hi Dani, I would like to order: "+lines+". Total "+$("total").textContent),"_blank");
+}
+
+/* quick view */
+function quick(id){
+ const p=PRODUCTS.find(x=>x.id===id);
+ $("mbox").innerHTML=`<button class="x" aria-label="Close" onclick="closeAll()">&times;</button>
+ <div class="pimg" style="background:radial-gradient(circle at 50% 40%,${p.c}66,transparent 70%)">${bottle(p.c)}</div>
+ <div><span class="tag">${p.type} &middot; ${p.fam}</span><h2 style="font-size:2.2rem">${p.name}</h2>
+ <p class="notes" style="margin-bottom:1rem">Top: ${p.top}<br>Heart: ${p.mid}<br>Base: ${p.base}</p>
+ <small>Longevity</small><div class="meter"><i style="width:${p.long}%"></i></div>
+ <small>Projection</small><div class="meter"><i style="width:${p.proj}%"></i></div>
+ <div class="sizes" style="margin-bottom:1rem">${SIZES.map((s,i)=>`<button class="sz ${state.size[id]===i?"on":""}" onclick="state.size[${id}]=${i};quick(${id});renderGrid()">${s} &middot; $${p.price[i]}</button>`).join("")}</div>
+ <button class="btn" onclick="addCart(${id});document.getElementById('modal').classList.remove('on')">Add to cart &middot; $${p.price[state.size[id]]}</button></div>`;
+ $("modal").classList.add("on");$("shade").classList.add("on");
+}
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeAll()});
+$("modal").addEventListener("click",e=>{if(e.target.id==="modal")closeAll()});
+
+/* newsletter */
+$("nl").addEventListener("submit",e=>{
+ e.preventDefault();
+ const v=$("em").value.trim(),m=$("nlmsg"),ok=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+ m.style.color=ok?"var(--gold2)":"#ff8a8a";
+ m.textContent=ok?"Thank you. Your 10% code is on its way.":"Enter a valid email address, like name@example.com.";
+ if(ok)$("em").value="";
+});
+document.querySelectorAll(".menu a").forEach(a=>a.addEventListener("click",()=>$("menu").classList.remove("open")));
+
+renderAll();renderCart();
+</script>
+</body>
+</html>
